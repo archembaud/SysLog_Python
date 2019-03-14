@@ -12,11 +12,8 @@ from datetime import datetime
 
 def CallNvidiaSMI():
 	# Call the Nvidia SMI to get the temperature
-	#os.system('nvidia-smi -q -d temperature > nvidia.log')
-	#subprocess.call(["nvidia-smi", "-q", "-d", "temperature", ">", "nvidia.log"])
-	#subprocess.call(["sh", "update.sh"])
         a = 'nvidia-smi -q -d temperature | grep \'GPU Current Temp\''
-	print a
+	#print a
 	b = os.popen(a, 'r', 1)
 	result = b.read()
 	print result
